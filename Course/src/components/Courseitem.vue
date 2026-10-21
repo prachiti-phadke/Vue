@@ -1,23 +1,32 @@
 <template>
-  <div class="p-4 bg-white border border-gray-200 rounded-md">
-    <h3 class="p-4 font-medium border-b border-gray-200">{{ title }}</h3>
+  <CardSections>
 
-    <p class="p-4 font-medium border-b border-gray-200">${{ price.toFixed(2) }}</p>
+    <template #header>{{ title }}</template>
 
-    <p class="p-4 font-medium">{{ description }}</p>
+    <template #default>{{ price }}</template>
 
-    <div>
+    <!-- {{ price }}  this will act the same as those template--> 
+
+    <template #footer> 
+      <p class="p-4 font-medium">{{ description }}</p>
+      <div class="flex justify-end">
       <button
         @click="$emit('purchase')"
-        class="border border-gray-200 rounded-full px-3 py-1 hover:bg-gray-700 hover:text-white transition duration-300 ease-in-out"
+        class=" border border-gray-200 rounded-full px-3 py-1 hover:bg-gray-700 hover:text-white transition duration-300 ease-in-out"
       >
         Purchase
       </button>
-    </div>
-  </div>
+      </div>
+    </template>
+
+    
+  </CardSections>
 </template>
 
 <script setup>
+
+import CardSections from '@/components/CardSections.vue'
+
 defineProps({
   title: String,
   price: Number,

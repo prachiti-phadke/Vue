@@ -13,11 +13,18 @@
       />
     </div>
     <h3 class="text-2xl font-medium">Your Courses</h3>
+
+    <div class="grid grid-cols-4">
+      <BookingItem v-for = "i in 2" :key="i">
+      
+      </BookingItem>
+    </div>
   </div>
 </template>
 
 <script setup>
 import Courseitem from '@/components/Courseitem.vue'
+import BookingItem from '@/components/BookingItem.vue'
 
 function handlePurchase() {
   console.log('Button Clicked')
