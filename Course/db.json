@@ -1,28 +1,42 @@
 {
-    "courses":[
-        {
-            "id" : "1",
-            "title" : "Vue Course",
-            "price" : 9.99,
-            "description" : "0 to hero vue course",
-            "bought" : false
-        },
-        {
-            "id" : "2",
-            "title" : "GO Course",
-            "price" : 9.99,
-            "description" : "0 to hero go course",
-            "bought" : false
-        },
-        {
-            "id" : "3",
-            "title" : "Python Course",
-            "price" : 9.99,
-            "description" : "0 to hero python course",
-            "bought" : false
-        }
-    ],
-    "bookings":[]
-
-
+  "courses": [
+    {
+      "id": "1",
+      "title": "Vue Course",
+      "price": 9.99,
+      "description": "0 to hero vue course",
+      "bought": false
+    },
+    {
+      "id": "2",
+      "title": "GO Course",
+      "price": 9.99,
+      "description": "0 to hero go course",
+      "bought": false
+    },
+    {
+      "id": "3",
+      "title": "Python Course",
+      "price": 9.99,
+      "description": "0 to hero python course",
+      "bought": false
+    }
+  ],
+  "bookings": [
+    {
+      "id": "1792572890722",
+      "title": "Vue Course",
+      "price": 9.99,
+      "description": "0 to hero vue course",
+      "bought": "pending",
+      "status": "confirmed"
+    },
+    {
+      "id": "2",
+      "title": "GO Course",
+      "price": 9.99,
+      "description": "0 to hero go course",
+      "status": "confirmed"
+    }
+  ]
 }

@@ -1,7 +1,7 @@
 <template>
         <CardSections>
         <div class = "flex justify-between items-center"> 
-            <div>Vue Course </div>
+            <div>{{ title }}</div>
                 <RoundedButton @click="console.log('Report Clicked')" variant = "danger">
                     Report
                 </RoundedButton>
@@ -20,5 +20,8 @@
 import CardSections from './CardSections.vue';
 import RoundedButton from './RoundedButton.vue';
 
+defineProps({
 
+    title : String
+})
 </script>
