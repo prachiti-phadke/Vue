@@ -6,7 +6,7 @@
             <slot name="header"></slot> 
         </div>
 
-        <div :class="{'p-4 ': true, 'border-b-20 border-gray-200': $slots.footer}">
+        <div :class="{'p-4 ': true, 'border-b border-gray-200': $slots.footer}">
             <slot></slot>
         </div>
 

@@ -4,11 +4,11 @@
     <h2 class="text-2xl font-medium">All Courses</h2>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:grid-cols-2">
       <Courseitem
-        v-for="i in 3"
-        :key="i"
-        title="Vue Course"
-        :price="9.99"
-        description="0-Hero in Vuejs"
+        v-for="course in courses"
+        :key="course.id"
+        :title="course.title"
+        :price="course.price"
+        :description="course.description"
         @purchase="handlePurchase"
       />
     </div>
@@ -23,10 +23,18 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
 import Courseitem from '@/components/Courseitem.vue'
 import BookingItem from '@/components/BookingItem.vue'
 
-function handlePurchase() {
-  console.log('Button Clicked')
+const courses = ref([])
+
+const fetchCourses = async () => {
+  const response = await fetch('http://localhost:3001/courses');
+  courses.value = await response.json();
 }
+
+onMounted(() => {
+  fetchCourses();
+})
 </script>
