@@ -2,7 +2,12 @@
   <div class="p-2 space-y-8">
     <h1 class="text-4xl font-medium">Courses Up !</h1>
     <h2 class="text-2xl font-medium">All Courses</h2>
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:grid-cols-2">
+
+    <div v-if = "loading">
+      Courses are loading...
+    </div>
+
+    <div v-else class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:grid-cols-2">
       <Courseitem
         v-for="course in courses"
         :key="course.id"
@@ -10,6 +15,7 @@
         :price="course.price"
         :description="course.description"
         @purchase="handlePurchase"
+        @click="console.log('button clicked')"
       />
     </div>
     <h3 class="text-2xl font-medium">Your Courses</h3>
@@ -28,13 +34,23 @@ import Courseitem from '@/components/Courseitem.vue'
 import BookingItem from '@/components/BookingItem.vue'
 
 const courses = ref([])
+const loading = ref(false)
 
 const fetchCourses = async () => {
-  const response = await fetch('http://localhost:3001/courses');
-  courses.value = await response.json();
+  loading.value = true
+
+  try{
+      const response = await fetch('http://localhost:3001/courses');
+      courses.value = await response.json();
+  }finally{
+      loading.value = false
+  }
+
 }
 
 onMounted(() => {
   fetchCourses();
 })
+
+
 </script>
