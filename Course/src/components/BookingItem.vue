@@ -2,7 +2,8 @@
         <CardSections>
         <div class = "flex justify-between items-center"> 
             <div>{{ title }}</div>
-                <RoundedButton @click="console.log('Report Clicked')" variant = "danger">
+            <div>{{ status }}</div>
+                <RoundedButton @click="$emit('report')" variant = "danger">
                     Report
                 </RoundedButton>
             
@@ -24,4 +25,6 @@ defineProps({
 
     title : String
 })
+
+defineEmits(['report'])
 </script>

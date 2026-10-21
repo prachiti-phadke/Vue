@@ -28,7 +28,12 @@
       </SkeletonBookingItem>
     </div>
     <div v-else class="grid grid-cols-1 gap-4">
-      <BookingItem v-for = "booking in bookings" :key="booking.id" :title = "booking.title">
+      <BookingItem v-for = "booking in bookings" 
+      :key="booking.id" 
+      :title = "booking.title"
+      :status = "booking.status"
+      @report = "reportCourse(booking.id)"
+      >
       </BookingItem>
     </div>
 
@@ -113,6 +118,24 @@ const fetchBookings = async() => {
   }
   
 
+}
+
+const reportCourse = async (courseId) => {
+  const index = bookings.value.findIndex((b) => b.id === courseId)
+  const toBeDeletedCourse = bookings.value[index]
+  bookings.value.splice(index, 1)
+
+  try{
+    const response = await fetch(`http://localhost:3001/bookings/${courseId}`, {
+      method: 'DELETE',
+    })
+    if (!response.ok) {
+      throw Error('Couldn\'t delete course')
+    }
+  }catch(e){
+    console.log(e)
+    bookings.value.splice(index, 0, toBeDeletedCourse)
+  }
 }
 
 onMounted(() => {

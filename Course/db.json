@@ -24,18 +24,10 @@
   ],
   "bookings": [
     {
-      "id": "1792572890722",
-      "title": "Vue Course",
+      "id": "3",
+      "title": "Python Course",
       "price": 9.99,
-      "description": "0 to hero vue course",
-      "bought": "pending",
-      "status": "confirmed"
-    },
-    {
-      "id": "2",
-      "title": "GO Course",
-      "price": 9.99,
-      "description": "0 to hero go course",
+      "description": "0 to hero python course",
       "status": "confirmed"
     }
   ]
