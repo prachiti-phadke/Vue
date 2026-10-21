@@ -10,12 +10,10 @@
     <template #footer> 
       <p class="p-4 font-medium">{{ description }}</p>
       <div class="flex justify-end">
-      <button
-        @click="$emit('purchase')"
-        class=" border border-gray-200 rounded-full px-3 py-1 hover:bg-gray-700 hover:text-white transition duration-300 ease-in-out"
-      >
+      <RoundedButton @click="$emit('click')">
         Purchase
-      </button>
+      </RoundedButton>
+      
       </div>
     </template>
 
@@ -26,6 +24,7 @@
 <script setup>
 
 import CardSections from '@/components/CardSections.vue'
+import RoundedButton from '@/components/RoundedButton.vue'
 
 defineProps({
   title: String,
@@ -33,5 +32,5 @@ defineProps({
   description: String,
 })
 
-defineEmits(['purchase'])
+defineEmits(['click'])
 </script>
