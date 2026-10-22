@@ -45,7 +45,6 @@
 import { ref, onMounted } from 'vue'
 import Courseitem from '@/components/Courseitem.vue'
 import BookingItem from '@/components/BookingItem.vue'
-import SkeletonCourseItem from '@/components/SkeletonCourseItem.vue'
 import SkeletonBookingItem from '@/components/SkeletonBookingItem.vue'
 
 const courses = ref([])
