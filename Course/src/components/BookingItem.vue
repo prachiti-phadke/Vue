@@ -15,10 +15,6 @@
         </div>
         </CardSections>
         
-
-        <!-- <CardSections>
-            <div>{{ title }}</div>        
-        </CardSections> -->
 </template>
 
 <script setup>
