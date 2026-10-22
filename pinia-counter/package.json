@@ -13,7 +13,7 @@
     "format": "prettier --write --experimental-cli src/"
   },
   "dependencies": {
-    "pinia": "^4.0.3",
+    "pinia": "^4.1.0",
     "vue": "rc"
   },
   "devDependencies": {
